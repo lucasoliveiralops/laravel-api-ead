@@ -3,7 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
+Route::get('/courses', function () {
     return response()->json([
         'sucess' => true,
     ]);
