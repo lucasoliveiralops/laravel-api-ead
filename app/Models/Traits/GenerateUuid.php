@@ -3,14 +3,13 @@
 namespace App\Models\Traits;
 
 use Illuminate\Support\Str;
-use Illuminate\Database\Eloquent\Model;
 
 trait GenerateUuid
 {
-  public static function boot()
+  public static function booted()
   {
     static::creating(function ($model) {
-      $model->id = (string) Str::uuid();
+      $model->{$model->getKeyName()} = (string) Str::uuid();
     });
   }
 }
